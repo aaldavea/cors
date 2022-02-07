@@ -1,0 +1,15 @@
+_schema-version: "3.2"
+ID: CORSProxy
+version: 0.0.1
+modules:
+  - name: cors-nodejs
+    type: nodejs
+    path: cors-nodejs
+    parameters:
+      host: onibex-cors-proxy
+      memory: 256M
+      instances: 1
+    provides:
+      - name: cors_nodejs_api
+        properties:
+          url: '${default-url}'
